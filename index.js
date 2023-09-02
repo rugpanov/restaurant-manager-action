@@ -1,21 +1,32 @@
-const core = require('@actions/core');
-const wait = require('./wait');
+const core = require("@actions/core");
+const admin = require("firebase-admin");
 
 
 // most @actions toolkit packages have async methods
 async function run() {
+  const firebaseConfig = {
+    apiKey: core.getInput("apiKey"),
+    authDomain: core.getInput("authDomain"),
+    projectId: core.getInput("projectId")
+  };
+
   try {
-    const ms = core.getInput('milliseconds');
-    core.info(`Waiting ${ms} milliseconds ...`);
-
-    core.debug((new Date()).toTimeString()); // debug is only output if you set the secret `ACTIONS_RUNNER_DEBUG` to true
-    await wait(parseInt(ms));
-    core.info((new Date()).toTimeString());
-
-    core.setOutput('time', new Date().toTimeString());
+    if (admin.apps.length === 0) {
+      admin.initializeApp(firebaseConfig);
+    }
+    console.log("app initialized")
   } catch (error) {
-    core.setFailed(error.message);
+    console.log(error);
+    console.log("cannot initialize app")
   }
+
+  const docValue = await admin.firestore()
+      .collection(core.getInput("collectionName"))
+      .doc(core.getInput("docName"))
+      .get()
+
+  console.log(docValue);
+  core.setOutput("firestoreValue", JSON.stringify(docValue))
 }
 
 run();
