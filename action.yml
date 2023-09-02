@@ -16,6 +16,9 @@ inputs:
   docName:
     description: 'docName'
     required: true
+  appId:
+    description: 'appId'
+    required: true
 outputs:
   firestoreValue:
     description: 'The firestore value'

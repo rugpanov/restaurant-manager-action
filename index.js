@@ -7,7 +7,8 @@ async function run() {
   const firebaseConfig = {
     apiKey: core.getInput("apiKey"),
     authDomain: core.getInput("authDomain"),
-    projectId: core.getInput("projectId")
+    projectId: core.getInput("projectId"),
+    appId: core.getInput("appId")
   };
 
   try {
