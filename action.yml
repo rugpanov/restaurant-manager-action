@@ -1,4 +1,4 @@
-name: 'Get value from firebase GitHub Action'
+name: 'Get value from firebase GitHub Action 2'
 description: 'Get value from firebase GitHub Action'
 inputs:
   apiKey:
