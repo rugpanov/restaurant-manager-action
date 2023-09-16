@@ -1,5 +1,5 @@
-name: 'Get value from firebase GitHub Action 2'
-description: 'Get value from firebase GitHub Action'
+name: 'Get Restaurant Manager Values Action'
+description: 'Get value for Restaurant Manager'
 inputs:
   apiKey:
     description: 'apiKey'
@@ -20,8 +20,14 @@ inputs:
     description: 'appId'
     required: true
 outputs:
-  firestoreValue:
-    description: 'The firestore value'
+  TOITOITOI:
+    description: 'Total Revenue'
+  toi-toi-toi:
+    description: 'ToiToiToi'
+  creme_glace:
+    description: 'Creme-glace'
+  Le_Souffleur:
+    description: 'Le Souffleur'
 runs:
   using: 'node16'
   main: 'dist/index.js'
