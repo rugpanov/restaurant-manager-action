@@ -23,8 +23,12 @@ async function run() {
 
   const db = getFirestore(app);
 
-  const docValue = await getDoc(doc(db, core.getInput("collectionName"), core.getInput("docName")));
-  console.log(docValue);
+  console.log("Used collection name " + core.getInput("collectionName"));
+  console.log("Used doc name " + core.getInput("docName"));
+
+  const docValueSnapshot = await getDoc(doc(db, core.getInput("collectionName"), core.getInput("docName")));
+  const docValue = docValueSnapshot.data()
+  console.log("Received data: " + JSON.stringify(docValue));
   core.setOutput("firestoreValue", JSON.stringify(docValue))
 }
 
