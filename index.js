@@ -34,11 +34,7 @@ async function run() {
   core.setOutput("creme_glace", docValue.creme_glace)
   core.setOutput("Le_Souffleur", docValue.Le_Souffleur)
   core.setOutput("Jimny", docValue.Jimny)
-  console.log("docValue.date: " + docValue.date);
-  console.log("docValue.date.toDate(): " + docValue.date.toDate());
-  console.log("docValue.date.toDate().toLocaleString(): " + docValue.date.toDate().toLocaleString());
-
-  core.setOutput("updated_at", docValue.date.toDate().toLocaleString())
+  core.setOutput("updated_at", docValue.date.toDate().toLocaleString("nl-NL"))
 }
 
 run();
