@@ -28,6 +28,8 @@ outputs:
     description: 'Creme-glace'
   Le_Souffleur:
     description: 'Le Souffleur'
+  updated_at:
+    description: 'Updated at'
 runs:
   using: 'node16'
   main: 'dist/index.js'
