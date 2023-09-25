@@ -30,6 +30,7 @@ async function run() {
   const docValue = docValueSnapshot.data()
   console.log("Received data: " + JSON.stringify(docValue));
   core.setOutput("full_income", docValue.full_income)
+  core.setOutput("month_income", docValue.month_income)
   core.setOutput("TOITOITOI", docValue.TOITOITOI)
   core.setOutput("creme_glace", docValue.creme_glace)
   core.setOutput("Le_Souffleur", docValue.Le_Souffleur)

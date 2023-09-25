@@ -20,7 +20,7 @@ inputs:
     description: 'appId'
     required: true
 outputs:
-  TOITOITOI:
+  full_income:
     description: 'Total Revenue'
   toi-toi-toi:
     description: 'ToiToiToi'
@@ -30,6 +30,8 @@ outputs:
     description: 'Le Souffleur'
   updated_at:
     description: 'Updated at'
+  month_income:
+    description: 'Month income'
 runs:
   using: 'node16'
   main: 'dist/index.js'
