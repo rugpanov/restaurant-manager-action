@@ -21063,7 +21063,7 @@ async function run() {
   core.setOutput("creme_glace", docValue.creme_glace)
   core.setOutput("Le_Souffleur", docValue.Le_Souffleur)
   core.setOutput("Jimny", docValue.Jimny)
-  core.setOutput("updated_at", docValue.date.toDate().getTime().toLocaleString("nl-NL", { timeZone: 'Europe/Brussels' }))
+  core.setOutput("updated_at", docValue.date.toDate().toLocaleTimeString("nl-NL", { timeZone: 'Europe/Brussels', hour: '2-digit', minute:'2-digit'}));
 }
 
 run();
